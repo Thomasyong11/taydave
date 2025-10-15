@@ -1,0 +1,110 @@
+Build a Vercel-ready marketing site for ROFIC – Ring of Fire Infrastructure Consultants.
+
+Tech/Hosting requirements:
+
+Next.js 14 (App Router) + TypeScript
+
+Tailwind CSS + shadcn/ui (Button, Card, Badge, Input, Textarea, NavigationMenu)
+
+ESLint + Prettier; Node 18+
+
+Static by default with ISR for any dynamic pages (revalidate 3600).
+
+Include /sitemap.xml and /robots.txt routes.
+
+Add Vercel Analytics and @vercel/og for a dynamic /api/og image.
+
+Simple /api/contact route that emails via Resend if RESEND_API_KEY is set; otherwise logs to server (no external calls required).
+
+Provide .env.example with RESEND_API_KEY, NEXT_PUBLIC_SITE_URL.
+
+Add a minimal vercel.json (clean URLs, trailingSlash=false).
+
+Brand & tone:
+
+We are consultants/coordination, not builders. Neutral, credible, government-friendly.
+
+Palette: deep navy (#0F1C2E), slate gray (#334155), white, subtle gold accent (#D4AF37).
+
+Fonts: Inter or Lato.
+
+Imagery: Northern Ontario landscapes, meeting rooms, roadways; avoid heavy construction shots.
+
+Navigation: Home, Services, Partner Network, Why ROFIC, Insights, Contact. Sticky header with logo left, “Partner With Us” button right.
+
+Pages/sections (content placeholders OK):
+
+Home (/)
+
+Hero: “Connecting Vision, Policy, and Progress.”
+Sub: “ROFIC helps governments and investors coordinate infrastructure, permitting, and partnerships for Ontario’s Ring of Fire.”
+Buttons: Primary “Partner With Us”, Secondary “Learn More”.
+
+“Our Role” cards (shadcn Cards):
+• Policy & Strategy Alignment • Indigenous Partnership Facilitation • Contractor & Vendor Network Access • Feasibility & Environmental Coordination • Funding & Grant Advisory
+
+Credibility strip with small text bullets: “Neutral advisory • Government collaboration • Community-first approach”.
+
+Services (/services)
+
+Sections with icons + short copy: Infrastructure Readiness, Regulatory & Environmental Guidance, Partnership & Engagement Strategy, Investment & Funding Advisory, Impact & Benefits Planning, Coordination Support.
+
+Clear note: “ROFIC acts as advisor/connector; delivery is performed by partner firms.”
+
+Partner Network (/partners)
+
+Grid of placeholder partner categories (Engineering, Environmental, PMO, Indigenous-owned contractors).
+
+Copy about vetting and matching: “connecting the right people to the right opportunities.”
+
+Why ROFIC (/why-rofic)
+
+Proof points: neutrality, public-sector literacy, risk awareness, transparent process.
+
+Small FAQ (3–5 items) in an accordion.
+
+Insights (/insights)
+
+Static blog index with 3 sample posts (markdown MDX ready).
+
+Each post uses ISR and shares the same OG image template.
+
+Contact (/contact)
+
+Form using react-hook-form + zod: Organization, Name, Email, Project Type (select), Message.
+
+Submit to /api/contact; show success/error toasts.
+
+Include privacy note (no selling data).
+
+SEO & metadata:
+
+Default metadata in app/layout.tsx:
+
+title: “ROFIC – Ring of Fire Infrastructure Consultants”
+
+description: “Consulting and coordination for Ontario’s Ring of Fire—aligning funding, policy, and partnerships.”
+
+keywords: Ring of Fire Ontario consultants, infrastructure advisory Northern Ontario, government coordination firm, Indigenous engagement consultants, critical minerals project management, Ontario funding partnerships
+
+OpenGraph + Twitter cards; canonical from NEXT_PUBLIC_SITE_URL.
+
+Add /api/og route that renders title + subtitle over a landscape background.
+
+Footer: company blurb, quick links, contact email placeholder hello@rofic.ca, and small disclaimer: “ROFIC provides consulting/coordination services and does not perform construction.”
+
+DX / Ready to deploy:
+
+README.md with:
+
+pnpm i (or npm/yarn)
+
+copy .env.example → .env.local
+
+pnpm dev
+
+push to GitHub and Deploy to Vercel (build: next build)
+
+Include sample env and note to set NEXT_PUBLIC_SITE_URL to the Vercel domain.
+
+Copy tone: short sentences, professional, no buzzwords, no claims of direct delivery. Keep text friendly to government and Indigenous partners.
